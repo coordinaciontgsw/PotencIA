@@ -69,9 +69,9 @@ El proceso metodológico se estructura en **5 fases** a lo largo de **21 semanas
 3. 📋 **Aplicación y sistematización:** Aplicación de la encuesta estructurada a las empresas seleccionadas y sistematización de los datos cuantitativos y cualitativos recopilados.
 4. 🔎 **Análisis y diagnóstico de brechas:** Evaluación integral de los resultados para identificar brechas tecnológicas y las variables que facilitan o frenan la integración de la IA en la gestión empresarial.
 5. 🎬 **Divulgación y cierre del proyecto:**
-   - 🎥 Producción del video documental de 3 minutos con el proceso y hallazgos del diagnóstico (semanas 19-21).
-   - 📚 Búsqueda y revisión de requisitos editoriales en revistas indexadas (semanas 19-20).
-   - ✍️ Redacción y consolidación final del artículo académico para su posterior publicación (semanas 21-22).
+   - 🎥 Producción del video documental de 3 minutos con el proceso y hallazgos del diagnóstico.
+   - 📚 Búsqueda y revisión de requisitos editoriales en revistas indexadas.
+   - ✍️ Redacción y consolidación final del artículo académico para su posterior publicación.
 ---
  
 ## 🗓️ Línea de tiempo general
