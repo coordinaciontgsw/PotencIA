@@ -169,7 +169,7 @@ Al terminar la sección: [Ir a BARRERAS Y PERSPECTIVAS DE ADOPCIÓN](#barreras-y
 
 ## BARRERAS PARA ADOPTAR IA
 
-1. **¿Cuáles son las principales barreras para adoptar IA en su empresa? (Seleccione hasta 3 opciones)**
+1. **¿Cuáles son las principales barreras para adoptar IA en su empresa?** (Seleccione hasta 3 opciones)
 	- [ ] Costos altos o presupuesto insuficiente
 	- [ ] Falta de personal capacitado en IA
 	- [ ] Desconocimiento sobre herramientas aplicables a nuestro tipo de negocio
@@ -183,7 +183,7 @@ Al terminar la sección: [Ir a Enviar Formulario](#enviar-formulario)
 
 ## BARRERAS Y PERSPECTIVAS DE ADOPCIÓN
 
-1. **¿Cuáles son las principales barreras para adoptar IA en su empresa? (Seleccione hasta 3 opciones)**
+1. **¿Cuáles son las principales barreras para adoptar IA en su empresa?** (Seleccione hasta 3 opciones)
 	- [ ] Costos altos o presupuesto insuficiente
 	- [ ] Falta de personal capacitado en IA
 	- [ ] Desconocimiento sobre herramientas aplicables a nuestro tipo de negocio
