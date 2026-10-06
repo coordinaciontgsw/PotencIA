@@ -35,12 +35,10 @@ El **semillero PotencIA** centra su plan de trabajo en el **diagnóstico del niv
 - [Emmanuel Sánchez Estepa](https://github.com/EmmanuelSan01)
 - [Jhoser Santiago Lizarazo Ravelo](https://github.com/locssrf)
 - [Jorge Enrique Parra Jaimes](https://github.com/jparra820-dev)
-- [Joseph Sneider Villamizar Patiño](https://github.com/JosephVillamizar)
 - Juan David Pinzón Villamizar
 - [Juan Fernando Umaña Barragán](https://github.com/Juanu12)
 - Juan Gabriel Velasco
 - Maikol Esteban Ruiz Gómez
-- Robin Daniel Corredor Duarte
 - [Sebastián Ricardo Torres Torres](https://github.com/torresebas)
 - Yulexy Paola Peralta Díaz
 
