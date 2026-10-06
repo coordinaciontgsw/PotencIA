@@ -11,7 +11,7 @@
 	- Girón
 	- Piedecuesta
 
-3**. **Tamaño de la empresa**
+3. **Tamaño de la empresa**
 	- Microempresa (1 a 10 empleados)
 	- Pequeña empresa (11 a 50 empleados)
 	- Mediana empresa (51 a 200 empleados)
