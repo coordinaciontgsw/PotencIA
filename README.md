@@ -31,16 +31,11 @@ El **semillero PotencIA** centra su plan de trabajo en el **diagnóstico del niv
 ### 👩‍🏫 Profesora tutora (UNAB)
 - [Sonia Juliana Ramírez Arenas](https://github.com/ju4n1t4)
 ### 🎓 Estudiantes de pregrado
-- Andrés Felipe Jeréz
 - [Emmanuel Sánchez Estepa](https://github.com/EmmanuelSan01)
 - [Jhoser Santiago Lizarazo Ravelo](https://github.com/locssrf)
 - [Jorge Enrique Parra Jaimes](https://github.com/jparra820-dev)
-- Juan David Pinzón Villamizar
 - [Juan Fernando Umaña Barragán](https://github.com/Juanu12)
-- Juan Gabriel Velasco
-- Maikol Esteban Ruiz Gómez
 - [Sebastián Ricardo Torres Torres](https://github.com/torresebas)
-- Yulexy Paola Peralta Díaz
 
 Todos los integrantes participan conjuntamente en la ejecución de las siete actividades del plan de trabajo, desde el diseño del instrumento hasta la redacción final del documento académico. 🤝
  
