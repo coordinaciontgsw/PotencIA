@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagrama de flujo: adopción de IA en MiPymes del AMB</title>
+<style>
+:root{--bg:#f4f5f2;--card:#fff;--fg:#1d2420;--mut:#5d675f;--line:#cfd5cc;--lk:#7b857d;--ok:#0f6b57;--dec:#6a3d8f;--decbg:#efe7f6;--r:.6rem}
+@media(prefers-color-scheme:dark){:root{--bg:#141815;--card:#1d231f;--fg:#e8ece7;--mut:#9aa69c;--line:#35403a;--lk:#7f8b82;--ok:#6fd1b5;--dec:#c9a2ee;--decbg:#2f2339}}
+*{box-sizing:border-box}
+html{font-size:clamp(15px,.9vw + 11px,18px)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.45}
+main{width:100%;padding:clamp(.75rem,2vw,1.75rem)}
+header{display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;align-items:end;justify-content:space-between;margin-bottom:1.5rem}
+h1{font-family:Georgia,"Iowan Old Style",serif;font-weight:500;font-size:clamp(1.25rem,2vw + .6rem,2rem);margin:0;line-height:1.15}
+.sub{color:var(--mut);font-size:.85rem;margin:.3rem 0 0}
+.tools{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center}
+.lg{display:flex;gap:.9rem;font-size:.8rem;color:var(--mut)}
+.lg i{display:inline-block;width:.85rem;height:.85rem;border-radius:.2rem;margin-right:.3rem;vertical-align:-.12rem;border:1px solid var(--line);background:var(--card)}
+.lg i.d{background:var(--decbg);border-color:var(--dec)}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible{outline:2px solid var(--ok);outline-offset:2px}
+.tb{border:1px solid var(--line);background:var(--card);padding:.4rem .8rem;border-radius:var(--r);font-size:.85rem}
+.tb:hover{border-color:var(--ok)}
+#f{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(.6rem,1.6vw,1.5rem);row-gap:1.1rem;align-items:start}
+#w{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+#w path{fill:none;stroke:var(--lk);stroke-width:1.5}
+#w .mk{fill:var(--lk);stroke:none}
+#w text{fill:var(--mut);font-size:.78rem;font-family:inherit}
+.n{position:relative;z-index:1;background:var(--card);border:1px solid var(--line);border-radius:var(--r);scroll-margin-top:1rem;transition:border-color .2s,box-shadow .2s}
+.n.d{background:var(--decbg);border-color:var(--dec)}
+.n.fl{box-shadow:0 0 0 3px var(--ok)}
+.hd{display:block;position:relative;width:100%;padding:.7rem 2rem;border:0;background:none;text-align:center;border-radius:var(--r)}
+div.hd{cursor:default}
+.hd b{display:block;font-weight:600;font-size:.98rem;line-height:1.25}
+.hd small{display:block;color:var(--mut);font-size:.78rem}
+.d .hd b{color:var(--dec)}
+.chev{position:absolute;right:.9rem;top:50%;width:.55rem;height:.55rem;margin-top:-.4rem;border-right:2px solid var(--mut);border-bottom:2px solid var(--mut);transform:rotate(45deg);transition:transform .3s}
+[aria-expanded=true] .chev{transform:rotate(-135deg);margin-top:-.15rem}
+.bd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+[aria-expanded=true]+.bd{grid-template-rows:1fr}
+.in{overflow:hidden;min-height:0}
+.pad{padding:0 1rem 1rem;border-top:1px solid var(--line)}
+.q{margin-top:.85rem}
+.q p{margin:0 0 .3rem;font-weight:600;font-size:.88rem}
+.q p span{color:var(--mut);font-weight:400;font-size:.74rem;margin-left:.4rem}
+ul{list-style:none;margin:0;padding:0}
+li{position:relative;padding:.15rem 0 .15rem 1.25rem;font-size:.84rem}
+li:before{content:"";position:absolute;left:.1rem;top:.5rem;width:.65rem;height:.65rem;border:1.5px solid var(--mut);border-radius:50%}
+.m li:before{border-radius:.15rem}
+.t{counter-reset:a}
+.t li{counter-increment:a;padding-left:1.6rem}
+.t li:before{content:counter(a);border:0;width:auto;height:auto;top:.15rem;left:0;color:var(--mut);font-size:.74rem}
+.sc{display:flex;flex-wrap:wrap;gap:.3rem;margin:.2rem 0 .5rem}
+.sc span{font-size:.7rem;border:1px solid var(--line);border-radius:1rem;padding:.03rem .5rem;color:var(--mut)}
+.go{border:1px solid var(--dec);background:var(--decbg);color:var(--dec);border-radius:1rem;padding:.02rem .6rem;font-size:.74rem;margin:.1rem 0 .1rem .4rem}
+.go:hover{filter:brightness(.95)}
+.nx{margin-top:.9rem;padding-top:.6rem;border-top:1px dashed var(--line);font-size:.78rem;color:var(--mut)}
+.note{margin:.85rem 0 0;font-size:.76rem;color:var(--mut);background:var(--bg);padding:.4rem .6rem;border-radius:.4rem}
+.rt{display:none}
+@media(min-width:48rem){
+#f{row-gap:3rem}
+.n[data-id=perfil]{grid-area:1/1/2/4;justify-self:center;width:42%;min-width:14rem}
+.n[data-id=etapa]{grid-area:2/1/3/4;justify-self:center;width:56%;min-width:20rem}
+.n[data-id=percs]{grid-area:3/1}.n[data-id=areas]{grid-area:3/2}.n[data-id=uso]{grid-area:3/3}
+.n[data-id=barA]{grid-area:4/1}.n[data-id=perc2]{grid-area:4/2/5/4}
+.n[data-id=q2]{grid-area:5/2/6/4}.n[data-id=resp]{grid-area:6/2}
+.n[data-id=pres]{grid-area:7/2/8/4}.n[data-id=monto]{grid-area:8/2}
+.n[data-id=barB]{grid-area:9/2/10/4}.n[data-id=q3]{grid-area:10/2/11/4}
+.n[data-id=imp]{grid-area:11/2}.n[data-id=env]{grid-area:12/1/13/4}
+}
+@media(max-width:47.99rem){#w{display:none}.rt{display:block;padding:0 .8rem .7rem;text-align:center;font-size:.75rem;color:var(--mut)}.rt .go{margin:.15rem .15rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div>
+<h1>Diagnóstico de adopción de IA en las MiPymes del AMB</h1>
+<p class="sub">Diagrama de flujo del cuestionario. Pulsa un nodo para ver sus preguntas; los botones morados te llevan al destino de cada respuesta.</p>
+</div>
+<div class="tools">
+<div class="lg"><span><i></i>Sección</span><span><i class="d"></i>Pregunta con salto</span></div>
+<button class="tb" id="ex">Expandir todo</button>
+<button class="tb" id="co">Contraer todo</button>
+</div>
+</header>
+<div id="f"><svg id="w" aria-hidden="true"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path class="mk" d="M0 1L10 5L0 9z"/></marker></defs><g id="e"></g></svg></div>
+</main>
+<script>
+const BA=["Costos altos o presupuesto insuficiente","Falta de personal capacitado en IA","Desconocimiento sobre herramientas aplicables a nuestro tipo de negocio","Incertidumbre respecto al Retorno de la Inversión (ROI)","Preocupación por la privacidad, confidencialidad o seguridad de los datos","Resistencia al cambio por parte de los empleados o directivos","Infraestructura o calidad de datos deficiente","Falta de claridad jurídica o regulatoria"];
+const AR=["Marketing y Ventas","Servicio y Atención al Cliente","Finanzas, Contabilidad y Riesgo","Recursos Humanos / Gestión del Talento","Cadena de Suministro y Logística","Producción u Operaciones Principales","Ninguna área en particular"];
+const AF=["Las soluciones de IA son compatibles con los sistemas informáticos que la empresa usa actualmente.","Las soluciones de IA se alinean con la estrategia y los objetivos de la empresa.","El uso de IA mejorará la eficiencia y la productividad de la empresa.","Las herramientas de IA son fáciles de usar para el personal de la empresa.","La empresa cuenta con los equipos y la conexión a internet necesarios para usar IA.","La empresa cuenta con datos digitales organizados y suficientes para usar IA.","La gerencia promueve activamente el uso de IA en la empresa.","El personal tiene las competencias digitales necesarias para usar herramientas de IA.","En la empresa hay apertura al cambio y disposición para aprender nuevas tecnologías.","La empresa siente presión para adoptar IA porque competidores de su sector ya la utilizan.","Clientes o proveedores esperan que la empresa utilice herramientas de IA en su relación comercial.","La empresa conoce la normativa colombiana sobre protección de datos y uso de IA.","La empresa tiene o planea establecer alianzas con universidades, gremios o centros tecnológicos del área metropolitana de Bucaramanga para adoptar tecnología."];
+const LK=["Totalmente en desacuerdo","En desacuerdo","Ni de acuerdo ni en desacuerdo","De acuerdo","Totalmente de acuerdo"];
+const PR=["Muy improbable","Improbable","Ni probable ni improbable","Probable","Muy probable"];
+const PERC={t:"Indique su grado de acuerdo o desacuerdo con las siguientes afirmaciones",y:"escala",s:AF,sc:LK};
+const S=[
+{id:"perfil",n:"Perfil de la empresa",k:"start",q:[
+{t:"Nombre de la empresa",y:"abierta"},
+{t:"Municipio de ubicación de la sede principal",y:"única",o:["Bucaramanga","Floridablanca","Girón","Piedecuesta"]},
+{t:"Tamaño de la empresa",y:"única",o:["Microempresa (1 a 10 empleados)","Pequeña empresa (11 a 50 empleados)","Mediana empresa (51 a 200 empleados)"]},
+{t:"Sector económico",y:"única",o:["Comercio","Servicios","Manufactura / Industria","Agroindustria","Tecnología / Software","Construcción","Otro: ____"]},
+{t:"Años de operación",y:"única",o:["Menos de 2 años","Entre 2 y 5 años","Entre 6 y 10 años","Más de 10 años"]},
+{t:"Cargo de quien responde",y:"única",o:["Propietario / Gerente","Directivo o administrativo","Otro: ____"]}],nx:["etapa"]},
+{id:"etapa",n:"Etapa de adopción de la IA",q:[
+{t:"¿En qué etapa de adopción de herramientas de IA se encuentra actualmente su empresa?",y:"única",o:[
+"Sin intención: No usamos IA ni planeamos usarla en los próximos seis meses.|percs",
+"En evaluación: Estamos explorando o investigando qué soluciones podrían servir a la empresa.|areas",
+"Prueba piloto: Estamos realizando proyectos experimentales o pruebas con algunas herramientas de IA.|uso",
+"Adopción operativa: Ya hemos implementado herramientas de IA en nuestros procesos cotidianos.|uso"]}]},
+{id:"areas",n:"Áreas donde se explora la IA",note:"Solo para quienes están En evaluación.",q:[
+{t:"¿En cuáles áreas de su empresa se ha considerado el uso de IA?",y:"múltiple",o:AR}],nx:["perc2"]},
+{id:"uso",n:"Uso actual de la IA: áreas, tecnologías y herramientas",note:"Para Prueba piloto y Adopción operativa.",q:[
+{t:"¿En cuáles áreas de su empresa se usa o se ha probado IA?",y:"múltiple",o:AR},
+{t:"¿Qué tipos de tecnologías de IA utiliza su empresa?",y:"múltiple",o:["Análisis predictivo o aprendizaje automático (pronóstico de ventas, comportamiento de clientes)","Análisis de texto o lenguaje natural (clasificación de comentarios de clientes)","Visión por computador (reconocimiento de imágenes o códigos)","Robótica o automatización avanzada de procesos con IA","Ninguna tecnología de IA utilizada actualmente"]},
+{t:"¿Cuáles de las siguientes herramientas o plataformas de IA utilizan en la empresa?",y:"múltiple",o:["ChatGPT","Microsoft Copilot","Google Gemini","Claude","Canva (funciones de IA)","Generación multimedia (Midjourney, CapCut, DALL·E, etc.)","CRM con funciones de IA (HubSpot, Zoho, Salesforce, etc.)","Chatbots o asistentes en WhatsApp Business, web o redes sociales","Software contable, ERP o de facturación con funciones de IA","Plataformas de automatización (Zapier, Make, Power Automate, etc.)","Software especializado del sector (mantenimiento predictivo, control de calidad, inventarios, etc.)","Otra: ____"]},
+{t:"¿A qué se dedica principalmente la IA que usa su empresa?",y:"múltiple",o:["Actividades centrales del negocio (maquinaria, producción, procesos operativos)","Actividades de apoyo (redes sociales, marketing, administración, etc.)"]}],nx:["perc2"]},
+{id:"percs",n:"Percepciones sobre la adopción de IA (versión corta)",note:"Ruta corta: solo para Sin intención. No incluye la pregunta sobre responsables.",q:[PERC],nx:["barA"]},
+{id:"perc2",n:"Percepciones sobre la adopción de IA (versión completa)",q:[PERC,
+{t:"¿La empresa ha designado personas responsables de liderar la adopción de IA?",y:"única",o:["Sí|resp","El propietario/gerente asume esta función|pres","No|pres"]}]},
+{id:"resp",n:"Responsables de la adopción de IA",q:[
+{t:"¿Cuánto tiempo pueden dedicar esas personas a esta labor?",y:"única",o:["Dedicación exclusiva","Tiempo parcial","Disponibilidad muy limitada"]},
+{t:"Las personas responsables de la adopción de IA son:",y:"múltiple",o:["Personal interno","Personal externo (consultores, proveedores)"]}],nx:["pres"],nt:"Continúa por orden del documento."},
+{id:"pres",n:"Presupuesto para IA",q:[
+{t:"¿La empresa tiene presupuesto asignado para adquirir o mantener soluciones de IA?",y:"única",o:["Sí|monto","No|barB"]}]},
+{id:"monto",n:"Monto del presupuesto para IA",q:[
+{t:"¿Cuál es el presupuesto anual aproximado asignado a IA? (valor en COP)",y:"numérica"}],nx:["barB"]},
+{id:"barA",n:"Barreras para adoptar IA",note:"Cierre de la ruta corta.",q:[
+{t:"¿Cuáles son las principales barreras para adoptar IA en su empresa?",y:"múltiple, hasta 3",o:BA}],nx:["env"]},
+{id:"barB",n:"Barreras y perspectivas de adopción",q:[
+{t:"¿Cuáles son las principales barreras para adoptar IA en su empresa?",y:"múltiple, hasta 3",o:BA},
+{t:"¿Qué tan probable es que su empresa adopte o amplíe el uso de soluciones de IA en los próximos seis meses?",y:"escala",sc:PR},
+{t:"¿Su empresa usa o ha probado herramientas de IA en sus procesos?",y:"única",o:["Sí|imp","No|env"]}]},
+{id:"imp",n:"Impactos y aprendizajes de la implementación",q:[
+{t:"¿Cuáles han sido los principales impactos positivos obtenidos con la IA?",y:"única",o:["Reducción del tiempo dedicado a tareas repetitivas","Reducción de costos operativos","Aumento de la productividad del personal","Mejora en la atención y satisfacción del cliente","Aumento en ventas o captación de clientes","Mejor toma de decisiones basada en datos","Mayor calidad de productos o servicios / menos errores","Mejor calidad o mayor volumen de contenido de marketing","Liberación de personal para tareas más estratégicas","Mayor competitividad frente a otras empresas del sector","Aún no percibimos impactos significativos","Otro: ____"]},
+{t:"¿Cuál ha sido el principal aprendizaje o dificultad durante la implementación?",y:"única",o:["Se requiere capacitación previa del personal","Los datos de la empresa no estaban listos o eran de baja calidad","Los resultados requieren supervisión y validación humana constante","La curva de aprendizaje fue mayor a la esperada","Los costos (suscripciones, licencias, soporte) fueron mayores a los previstos","Hubo resistencia o desconfianza del personal","Ha sido más fácil de lo que se esperaba","Otro: ____"]}],nx:["env"]},
+{id:"env",n:"Enviar formulario",k:"end",q:[]}
+];
+
+const byId={};S.forEach(s=>byId[s.id]=s);
+const T={};S.forEach(s=>T[s.id]=s.n);
+T.q2="¿Hay responsables de la IA?";T.q3="¿Usa o ha probado IA?";T.pres="¿Hay presupuesto asignado?";
+const P2=byId.perc2.q,B=byId.barB.q;
+const Q={perc2:[P2[0]],q2:[P2[1]],barB:[B[0],B[1]],q3:[B[2]]};
+const M={perfil:["Perfil de la empresa","6 preguntas"],etapa:["Etapa de adopción de IA","Elige 1 de 4 opciones",1],percs:["Percepciones","Sin pregunta 2"],areas:["Áreas de IA","Dónde se explora"],uso:["Uso actual de la IA","4 preguntas"],barA:["Barreras","Para adoptar IA"],perc2:["Percepciones","Escala de acuerdo"],q2:["¿Hay responsables de la IA?","Pregunta 2 de percepciones",1],resp:["Responsables","Tiempo y tipo de personal"],pres:["¿Hay presupuesto asignado?","Sección Presupuesto para IA",1],monto:["Monto del presupuesto","Valor anual en COP"],barB:["Barreras y perspectivas","Incluye probabilidad a 6 meses"],q3:["¿Usa o ha probado IA?","Pregunta 3 de la sección",1],imp:["Impactos y aprendizajes","Positivos y dificultades"],env:["Enviar formulario",""]};
+const E=[["perfil","etapa"],["etapa","percs","Sin intención",{from:"L"}],["etapa","areas","En evaluación"],["etapa","uso","Prueba piloto / Adopción operativa",{from:"R"}],["percs","barA"],["barA","env"],["areas","perc2"],["uso","perc2"],["perc2","q2"],["q2","resp","Sí"],["q2","pres","Gerente asume",{fx:.68,la:"e"}],["q2","pres","No",{fx:.88}],["resp","pres"],["pres","monto","Sí"],["pres","barB","No",{fx:.85}],["monto","barB"],["barB","q3"],["q3","imp","Sí"],["q3","env","No",{fx:.85}],["imp","env"]];
+const esc=x=>x.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const chip=(id,c)=>`<button class="go" data-go="${id}">${c}: ${esc(T[id])}</button>`;
+function qHTML(q){
+let h=`<div class="q"><p>${esc(q.t)}${q.y?`<span>${q.y}</span>`:""}</p>`;
+if(q.sc)h+=`<div class="sc">${q.sc.map(x=>`<span>${x}</span>`).join("")}</div>`;
+if(q.s)h+=`<ul class="t">${q.s.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+if(q.o){const m=/múltiple/.test(q.y);h+=`<ul class="${m?"m":""}">${q.o.map(o=>{const[a,b]=o.split("|");return`<li>${esc(a)}${b?chip(b,"→"):""}</li>`}).join("")}</ul>`}
+return h+"</div>"}
+const f=document.getElementById("f"),els={};
+Object.keys(M).forEach(id=>{
+const[tt,sb,d]=M[id],qs=Q[id]||(byId[id]&&byId[id].q)||[],note=byId[id]&&byId[id].note;
+const out=E.filter(e=>e[0]===id),nx=out.filter(e=>!e[2]);
+const a=document.createElement("article");a.className="n"+(d?" d":"");a.dataset.id=id;a.id="s-"+id;
+const head=`<b>${esc(tt)}</b>${sb?`<small>${sb}</small>`:""}`;
+a.innerHTML=(qs.length?`<button class="hd" aria-expanded="false" aria-controls="b-${id}">${head}<span class="chev"></span></button><div class="bd" id="b-${id}"><div class="in"><div class="pad">${note?`<p class="note">${esc(note)}</p>`:""}${qs.map(qHTML).join("")}${nx.length?`<div class="nx">Al terminar: ${nx.map(e=>chip(e[1],"ir a")).join(" ")}</div>`:""}</div></div></div>`:`<div class="hd">${head}</div>`)+(out.length?`<div class="rt">${out.map(e=>chip(e[1],e[2]||"Sigue")).join("")}</div>`:"");
+f.appendChild(a);els[id]=a});
+const svg=document.getElementById("w"),g=document.getElementById("e"),NS="http://www.w3.org/2000/svg";
+const wide=matchMedia("(min-width:48rem)");
+const mk=(t,at,txt)=>{const n=document.createElementNS(NS,t);for(const k in at)n.setAttribute(k,at[k]);if(txt!=null)n.textContent=txt;g.appendChild(n)};
+function draw(){
+g.innerHTML="";if(!wide.matches)return;
+const c=f.getBoundingClientRect();
+svg.setAttribute("viewBox",`0 0 ${c.width} ${c.height}`);
+const R=id=>{const r=els[id].getBoundingClientRect();return{l:r.left-c.left,r:r.right-c.left,t:r.top-c.top,b:r.bottom-c.top,w:r.width}};
+const cl=(x,r)=>Math.min(Math.max(x,r.l+12),r.r-12);
+E.forEach(([a,b,lb,o])=>{
+o=o||{};const A=R(a),Bx=R(b),ty=Bx.t-2;let x,y0,d,lx,la="start";
+if(o.from){x=(Bx.l+Bx.r)/2;const sx=o.from==="L"?A.l:A.r;d=`M${sx} ${(A.t+A.b)/2}H${x}V${ty}`;
+if(o.from==="L"){lx=x+7}else{lx=x-7;la="end"}}
+else{x=o.fx!=null?A.l+A.w*o.fx:(A.w<=Bx.w?(A.l+A.r)/2:(Bx.l+Bx.r)/2);
+const sx=cl(x,A);x=cl(x,Bx);d=sx===x?`M${x} ${A.b}V${ty}`:`M${sx} ${A.b}V${(A.b+ty)/2}H${x}V${ty}`;
+lx=x+7;if(o.la==="e"){lx=x-7;la="end"}}
+mk("path",{d,"marker-end":"url(#ah)"});
+if(lb){lb.split(" / ").forEach((s,i,ar)=>mk("text",{x:lx,y:A.b+18+i*15,"text-anchor":la},s+(i<ar.length-1?" /":"")))}
+})}
+const kick=()=>{const t=performance.now();(function s(){draw();if(performance.now()-t<600)requestAnimationFrame(s)})()};
+new ResizeObserver(draw).observe(f);wide.addEventListener("change",draw);
+const set=(c,v)=>{const h=c.querySelector("button.hd");if(h)h.setAttribute("aria-expanded",v)};
+f.addEventListener("click",e=>{
+const go=e.target.closest("[data-go]");
+if(go){const c=els[go.dataset.go];set(c,true);kick();c.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth",block:"center"});c.classList.add("fl");setTimeout(()=>c.classList.remove("fl"),1400);return}
+const hd=e.target.closest("button.hd");
+if(hd){hd.setAttribute("aria-expanded",hd.getAttribute("aria-expanded")!=="true");kick()}});
+const all=v=>{Object.values(els).forEach(c=>set(c,v));kick()};
+document.getElementById("ex").onclick=()=>all(true);
+document.getElementById("co").onclick=()=>all(false);
+draw();
+</script>
+</body>
+</html>
