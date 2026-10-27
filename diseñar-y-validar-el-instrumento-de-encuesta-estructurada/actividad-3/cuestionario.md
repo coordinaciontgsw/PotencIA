@@ -100,7 +100,7 @@ Al terminar la sección: [Ir a PERCEPCIONES SOBRE LA ADOPCIÓN DE IA EN SU EMPRE
 1. **Indique su grado de acuerdo o desacuerdo con las siguientes afirmaciones, orientadas a su empresa, utilizando la siguiente escala:**
 
 Afirmación                                                                                                                                                     | Totalmente en desacuerdo | En desacuerdo | Ni de acuerdo ni en desacuerdo | De acuerdo | Totalmente de acuerdo
--|:-:|:-:|:-:|:-:|:-:
+---|:-:|:-:|:-:|:-:|:-:
 Las soluciones de IA son compatibles con los sistemas informáticos que la empresa usa actualmente.                                                             | ○                        | ○             | ○                              | ○          | ○
 Las soluciones de IA se alinean con la estrategia y los objetivos de la empresa.                                                                               | ○                        | ○             | ○                              | ○          | ○
 El uso de IA mejorará la eficiencia y la productividad de la empresa.                                                                                          | ○                        | ○             | ○                              | ○          | ○
@@ -122,7 +122,7 @@ Al terminar la sección: [Ir a BARRERAS PARA ADOPTAR IA](#barreras-para-adoptar-
 1. **Indique su grado de acuerdo o desacuerdo con las siguientes afirmaciones, orientadas a su empresa, utilizando la siguiente escala:**
 
 Afirmación                                                                                                                                                     | Totalmente en desacuerdo | En desacuerdo | Ni de acuerdo ni en desacuerdo | De acuerdo | Totalmente de acuerdo
--|:-:|:-:|:-:|:-:|:-:
+---|:-:|:-:|:-:|:-:|:-:
 Las soluciones de IA son compatibles con los sistemas informáticos que la empresa usa actualmente.                                                             | ○                        | ○             | ○                              | ○          | ○
 Las soluciones de IA se alinean con la estrategia y los objetivos de la empresa.                                                                               | ○                        | ○             | ○                              | ○          | ○
 El uso de IA mejorará la eficiencia y la productividad de la empresa.                                                                                          | ○                        | ○             | ○                              | ○          | ○
