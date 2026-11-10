@@ -196,7 +196,7 @@ Al terminar la sección: [Ir a Enviar Formulario](#enviar-formulario)
 2. **¿Qué tan probable es que su empresa adopte o amplíe el uso de soluciones de IA en los próximos seis meses?**
 
 Muy improbable | Improbable | Ni probable ni improbable | Probable | Muy probable
-:-:|:-:|:-:|:-:|:-:
+:-: | :-: | :-: | :-: | :-:
 ○              | ○          | ○                         | ○        | ○
 
 3. **¿Su empresa usa o ha probado herramientas de IA en sus procesos?**
